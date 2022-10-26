@@ -1,0 +1,6 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "dictionaries": ["en", "typescript", "packages"],
+  "ignorePaths": ["node_modules/**", "**/libs/**", "**/coverage/**"]
+}
