@@ -1,0 +1,65 @@
+openapi: 3.0.0
+x-stoplight:
+  id: 2d9ni1le8dgbs
+info:
+  title: experiment-api
+  version: '1.0'
+servers:
+  - url: 'http://localhost:4000'
+paths:
+  /login:
+    post:
+      summary: ''
+      operationId: post-login
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                required:
+                  - name
+              examples:
+                example-1:
+                  value:
+                    name: loggedin user name
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                required:
+                  - message
+              examples:
+                example-1:
+                  value:
+                    message: not found user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                password:
+                  type: string
+              required:
+                - id
+                - password
+            examples:
+              example-1:
+                value:
+                  id: login-id
+                  password: login-password
+components:
+  schemas: {}
