@@ -1,7 +1,7 @@
 module.exports = {
-  roots: ["<rootDir>/spec"],
+  roots: ["<rootDir>/src"],
   transform: {
-    "^.+\\.ts$": [
+    "^.+\\.(ts|tsx)$": [
       "@swc/jest",
       {
         sourceMaps: true, // エラーを見やすくする( 有効じゃないと内容がズレて表示されます )
@@ -13,6 +13,14 @@ module.exports = {
         jsc: {
           parser: {
             syntax: "typescript", // ソースコードをtypescriptとしてパースする
+            tsx: true, // jsx記法を許可する
+          },
+
+          transform: {
+            react: {
+              // 必須。省略すると "ReferenceError: React is not defined" が発生します
+              runtime: "automatic",
+            },
           },
         },
       },
