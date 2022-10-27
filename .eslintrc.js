@@ -9,6 +9,6 @@ module.exports = {
   },
   plugins: ["sonarjs"],
   extends: ["plugin:sonarjs/recommended", "strict-check/react"],
-  ignorePatterns: ["**/libs/**/*", "**/coverage/**", "**/out/**"],
+  ignorePatterns: ["**/libs/**/*", "**/coverage/**", ".storybook/public"],
   reportUnusedDisableDirectives: true,
 }
