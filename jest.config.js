@@ -1,5 +1,9 @@
 module.exports = {
   roots: ["<rootDir>/src"],
+  setupFilesAfterEnv: [
+    "@testing-library/jest-dom/extend-expect",
+    "./jest.setup.ts",
+  ],
   transform: {
     "^.+\\.(ts|tsx)$": [
       "@swc/jest",
