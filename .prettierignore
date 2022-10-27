@@ -1,4 +1,5 @@
 .husky
+.storybook/public
 .yarn
 coverage/**
 out/**
