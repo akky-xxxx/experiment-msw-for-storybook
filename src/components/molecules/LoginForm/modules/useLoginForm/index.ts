@@ -1,9 +1,11 @@
-import axios, { AxiosError, HttpStatusCode } from "axios"
+import axios, { AxiosError } from "axios"
 import { useState } from "react"
 
 import { Common } from "../../../../../shared/const/common"
 
 import type { ChangeEventHandler, FormEventHandler } from "react"
+
+const ErrorStatusCode = 400
 
 export const useLoginForm = () => {
   const [idValue, setIdValue] = useState("")
@@ -30,7 +32,7 @@ export const useLoginForm = () => {
         password: passwordValue,
       })
 
-      if (status > HttpStatusCode.BadRequest) {
+      if (status > ErrorStatusCode) {
         setErrorMessage("has error1")
         return
       }
